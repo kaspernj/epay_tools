@@ -17,8 +17,8 @@ Jeweler::Tasks.new do |gem|
   gem.name = "epay_tools"
   gem.homepage = "http://github.com/kaspernj/epay_tools"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{Tools to implement the ePay payment gateway}
+  gem.description = %Q{Tools to implement the ePay payment gateway}
   gem.email = "kaspernj@gmail.com"
   gem.authors = ["kaspernj"]
   # dependencies defined in Gemfile
