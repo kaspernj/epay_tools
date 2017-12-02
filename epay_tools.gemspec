@@ -27,6 +27,7 @@ Gem::Specification.new do |s|
     "README.rdoc",
     "Rakefile",
     "VERSION",
+    "epay_tools.gemspec",
     "lib/epay_tools.rb",
     "lib/epay_tools/hash_calculator_service.rb",
     "lib/epay_tools/ordered_parameters.rb",
