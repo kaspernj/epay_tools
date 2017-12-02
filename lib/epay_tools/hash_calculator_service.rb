@@ -1,19 +1,4 @@
 class EpayTools::HashCalculatorService < ServicePattern::Service
-  DEFAULT_PARAMETERS = {
-    "merchantnumber" => nil,
-    "accepturl" => nil,
-    "callbackurl" => nil,
-    "orderid" => nil,
-    "amount" => nil,
-    "currency" => "DKK",
-    "ownreceipt" => "1",
-    "windowstate" => "2",
-    "instantcapture" => "1",
-    "paymentcollection" => "1",
-    "lockpaymentcollection" => "1",
-    "subscription" => "0"
-  }.freeze
-
   attr_reader :query_parameters, :epay_md5_key
 
   def initialize(query_parameters:, epay_md5_key:)
@@ -40,7 +25,7 @@ private
     parameters = {}
 
     EpayTools::OrderedParameters::ORDERED_PARAMETERS.each do |ordered_parameter|
-      parameters[selected_parameter] = query_parameters.fetch(ordered_parameter)
+      parameters[ordered_parameter] = query_parameters.fetch(ordered_parameter)
     end
 
     parameters
