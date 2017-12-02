@@ -15,7 +15,7 @@ describe EpayTools::Calculator do
       "paymentcollection" => "1",
       "lockpaymentcollection" => "1",
       "subscription" => "0",
-      "hash" => "edc52b2b2f619551146682061d3a9d0d"
+      "hash" => "394b72dae2714e89222d30cf9a1d649b"
     }
   end
   let(:service) do
@@ -27,7 +27,7 @@ describe EpayTools::Calculator do
 
   describe "#calculated_hash" do
     it "calculates the right hash" do
-      expect(service.execute!.result.fetch(:epay_hash)).to eq "edc52b2b2f619551146682061d3a9d0d"
+      expect(service.execute!.result.fetch(:epay_hash)).to eq "394b72dae2714e89222d30cf9a1d649b"
     end
   end
 end
