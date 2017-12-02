@@ -3,6 +3,9 @@ source "https://rubygems.org"
 # Example:
 #   gem "activesupport", ">= 2.3.5"
 
+gem "auto_autoloader", ">= 0.0.5"
+gem "service_pattern", ">= 0.0.3"
+
 # Add dependencies to develop your gem here.
 # Include everything needed to run rake, tests, features, etc.
 group :development do
