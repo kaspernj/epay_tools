@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe EpayTools::HashCalculatorService do
+describe EpayTools::Calculator do
   let(:epay_parameters) do
     {
       "merchantnumber" => "123123",
@@ -19,21 +19,15 @@ describe EpayTools::HashCalculatorService do
     }
   end
   let(:service) do
-    EpayTools::HashCalculatorService.new(
+    EpayTools::Calculator.new(
       epay_md5_key: "secret-md5-key",
-      query_parameters: epay_parameters
+      params: epay_parameters
     )
   end
 
   describe "#calculated_hash" do
     it "calculates the right hash" do
-      expect(service.__send__(:calculated_hash)).to eq "edc52b2b2f619551146682061d3a9d0d"
-    end
-  end
-
-  describe "#validated?" do
-    it "returns true when the hash is right" do
-      expect(service.__send__(:validated?)).to eq true
+      expect(service.execute!.result.fetch(:epay_hash)).to eq "edc52b2b2f619551146682061d3a9d0d"
     end
   end
 end
