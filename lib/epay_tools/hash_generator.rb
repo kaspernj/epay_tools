@@ -15,6 +15,7 @@ class EpayTools::HashGenerator < ServicePattern::Service
 private
 
   def calculate_hash
+    require "digest"
     @_calculate_hash ||= Digest::MD5.hexdigest("#{params.values.join}#{epay_md5_key}")
   end
 end
